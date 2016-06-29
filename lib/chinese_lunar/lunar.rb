@@ -41,7 +41,7 @@ module ChineseLunar
     # Get Lundar date in Chinese text
     def lunar_date_in_chinese() 
       l = convert(@date.year, @date.month, @date.day)
-      cyclical_year(l[0]) + "年 " + @@nstr[l[1]] + "月 " + get_day_in_chinese(l[2])
+      [cyclical_year(l[0]), @@nstr[l[1]], get_day_in_chinese(l[2]), @@nnimals[(@date.year - 4) % 12]]
     end
 
     def lunar_date_year_in_chinese()
